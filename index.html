@@ -1,0 +1,388 @@
+Apologies for the incomplete response earlier. Below is the **complete and detailed** webpage code including **both Technical Skills and Soft Skills sections** with expanded content and skill bars for a longer, professional, and visually appealing webpage.
+
+---
+
+### Complete Webpage with Detailed Technical & Soft Skills Sections
+
+```html
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sahil - Cybersecurity Enthusiast</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    /* Base styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+      min-height: 100vh;
+      color: #f0f4f8;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      position: relative;
+    }
+    /* Container with transparent colorful background and blur */
+    .container {
+      max-width: 900px;
+      margin: 3rem auto 6rem;
+      background: rgba(30, 30, 60, 0.85);
+      border-radius: 25px;
+      padding: 3rem 3rem 5rem;
+      box-shadow: 0 20px 50px rgba(102, 126, 234, 0.8);
+      position: relative;
+      z-index: 10;
+      backdrop-filter: saturate(180%) blur(25px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #e0e7ff;
+      box-sizing: border-box;
+    }
+    h1, h2, h3 {
+      color: #a3bffa;
+      text-shadow: 0 0 12px #667eea;
+    }
+    h1 {
+      font-size: 4.5rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientText 8s ease infinite;
+    }
+    @keyframes gradientText {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+    h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      position: relative;
+      cursor: pointer;
+      color: #fbbf24;
+      text-shadow: 0 0 10px #fbbf24;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 5px;
+      background: #fbbf24;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 3px;
+      transition: width 0.3s ease;
+      box-shadow: 0 0 10px #fbbf24;
+    }
+    h2:hover::after {
+      width: 110px;
+    }
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #60a5fa;
+      text-shadow: 0 0 8px #60a5fa;
+    }
+    .section {
+      margin-bottom: 5rem;
+    }
+    p, li {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #dbeafe;
+      text-shadow: 0 0 4px rgba(0,0,0,0.3);
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    .skill-bar {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      overflow: hidden;
+      height: 20px;
+      margin-top: 0.5rem;
+      box-shadow: inset 0 1px 5px rgba(0,0,0,0.4);
+    }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      transition: width 1.8s ease-in-out;
+      width: 0;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #ff6a00;
+    }
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.7s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .contact-link {
+      color: #fbbf24;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    .contact-link:hover {
+      color: #f59e0b;
+    }
+    /* Animated background shapes */
+    .background-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: visible;
+      z-index: 0;
+      filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.7));
+      mix-blend-mode: screen;
+    }
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.12;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      filter: drop-shadow(0 0 20px rgba(255, 107, 0, 0.6));
+    }
+    .shape1 {
+      width: 400px;
+      height: 400px;
+      background: #ff6a00;
+      top: 10%;
+      left: 5%;
+      animation-name: float1;
+      animation-duration: 10s;
+    }
+    .shape2 {
+      width: 300px;
+      height: 300px;
+      background: #ee0979;
+      top: 75%;
+      left: 80%;
+      animation-name: float2;
+      animation-duration: 12s;
+    }
+    .shape3 {
+      width: 500px;
+      height: 500px;
+      background: #fbbf24;
+      top: 40%;
+      left: 50%;
+      animation-name: float3;
+      animation-duration: 14s;
+    }
+    @keyframes float1 {
+      0% { transform: translateY(0) translateX(0); }
+      100% { transform: translateY(-30px) translateX(25px); }
+    }
+    @keyframes float2 {
+      0% { transform: translateY(0) translateX(0); }
+      100% { transform: translateY(35px) translateX(-30px); }
+    }
+    @keyframes float3 {
+      0% { transform: translateY(0) translateX(0); }
+      100% { transform: translateY(-40px) translateX(30px); }
+    }
+    /* Scroll to top button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #ff6a00;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(255, 106, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      transition: background 0.3s ease;
+    }
+    #scrollTopBtn:hover {
+      background: #ee0979;
+      box-shadow: 0 10px 30px rgba(238, 9, 121, 0.95);
+    }
+  </style>
+</head>
+<body>
+  <div class="background-shapes" aria-hidden="true">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </div>
+
+  <div class="container" role="main" aria-label="Sahil's Cybersecurity Profile">
+    <!-- Header -->
+    <header class="text-center mb-12 fade-in-up" style="animation-delay: 0.1s;">
+      <h1>Sahil</h1>
+      <p class="text-2xl font-semibold text-yellow-400 mb-1 drop-shadow-lg">Cybersecurity Enthusiast</p>
+      <p class="text-yellow-300 drop-shadow-md">Sheetal Puri Colony, Apolo Road, Jind, Haryana</p>
+      <p class="mt-1 text-yellow-300 drop-shadow-md">
+        Phone: <a href="tel:+919896990316" class="contact-link" aria-label="Phone number 9896990316">9896990316</a> | 
+        Email: <a href="mailto:sahilj91382@gmail.com" class="contact-link" aria-label="Email sahilj91382@gmail.com">sahilj91382@gmail.com</a>
+      </p>
+      <p class="mt-1 text-yellow-300 drop-shadow-md">
+        LinkedIn: <a href="https://www.linkedin.com/in/sahiljang-ra" target="_blank" rel="noopener" class="contact-link" aria-label="LinkedIn profile">linkedin.com/in/sahiljang-ra</a>
+      </p>
+    </header>
+
+    <!-- About Me -->
+    <section class="section fade-in-up" style="animation-delay: 0.2s;">
+      <h2>About Me</h2>
+      <p class="text-lg leading-relaxed max-w-prose mx-auto">
+        I am a passionate cybersecurity enthusiast with a strong foundation in IT and digital forensics. I have completed a Bachelor of Computer Applications and a 1-year diploma in Cybersecurity & Digital Forensics. I specialize in ethical hacking, penetration testing, system hardening, and forensic analysis. I am committed to continuous learning and staying updated with the latest cybersecurity trends and technologies.
+      </p>
+      <div class="mt-10 flex justify-center space-x-12">
+        <img src="https://img.icons8.com/ios-filled/100/ff6a00/hacker.png" alt="Ethical Hacking Icon" class="icon-hover w-24 h-24" />
+        <img src="https://img.icons8.com/ios-filled/100/ee0979/forensics.png" alt="Digital Forensics Icon" class="icon-hover w-24 h-24" />
+        <img src="https://img.icons8.com/ios-filled/100/fbbf24/network.png" alt="Networking Icon" class="icon-hover w-24 h-24" />
+        <img src="https://img.icons8.com/ios-filled/100/60a5fa/coding.png" alt="Programming Icon" class="icon-hover w-24 h-24" />
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section fade-in-up" style="animation-delay: 0.3s;">
+      <h2>Education & Certifications</h2>
+      <ul class="list-disc list-inside space-y-4 text-lg max-w-prose mx-auto">
+        <li>
+          <strong>Bachelor of Computer Applications (BCA)</strong><br />
+          Govt College Jind, Haryana (Aug 2022 - Aug 2025)
+          <p class="mt-1 text-yellow-300">Focused on software development, database management, and IT infrastructure.</p>
+        </li>
+        <li>
+          <strong>High School Diploma</strong><br />
+          Oasis International School, Jind, Haryana (April 2021)
+          <p class="mt-1 text-yellow-300">Graduated with honors in Science and Mathematics.</p>
+        </li>
+        <li>
+          <strong>Diploma in Cybersecurity & Digital Forensics</strong><br />
+          M Cyber Academy, Rohtak (1 year)
+          <p class="mt-1 text-yellow-300">Covered ethical hacking, malware analysis, network security, and forensic investigation.</p>
+        </li>
+        <li>
+          <strong>Certifications:</strong> CEH (Certified Ethical Hacker) - In Progress, CompTIA Security+ (Planned)
+        </li>
+      </ul>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section fade-in-up" style="animation-delay: 0.4s;">
+      <h2>Technical Skills</h2>
+      <p class="max-w-prose mx-auto mb-6">
+        I have developed a broad set of technical skills through formal education, hands-on projects, and continuous self-learning. Below are some of my core technical competencies:
+      </p>
+      <ul class="max-w-prose mx-auto space-y-6">
+        <li>
+          <h3>Operating Systems</h3>
+          <p>Proficient in Linux distributions (Ubuntu, Kali Linux) and Windows environments. Skilled in system administration, user management, and system hardening.</p>
+          <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+        </li>
+        <li>
+          <h3>Programming & Scripting</h3>
+          <p>Experienced in Python, Bash, and PowerShell scripting for automation, penetration testing, and forensic tasks.</p>
+          <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+        </li>
+        <li>
+          <h3>Cybersecurity Tools</h3>
+          <p>Hands-on experience with Burp Suite, Metasploit, Nmap, Wireshark, SQLMap, and OWASP ZAP for vulnerability scanning, exploitation, and network analysis.</p>
+          <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+        </li>
+        <li>
+          <h3>Networking</h3>
+          <p>Knowledgeable in LAN/WAN setup, VLANs, NAT, DMZ, ACL, and IP tables configuration for secure network design and management.</p>
+          <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
+        </li>
+        <li>
+          <h3>Penetration Testing</h3>
+          <p>Experienced in web, mobile, IoT, and network exploitation techniques, including scanning, enumeration, vulnerability analysis, and exploitation.</p>
+          <div class="skill-bar"><div class="skill-fill" style="width: 82%;"></div></div>
+        </li>
+        <li>
+          <h3>Digital Forensics</h3>
+          <p>Skilled in Windows/Linux forensics, malware analysis, data acquisition, and log analysis to investigate security incidents.</p>
+          <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Soft Skills -->
+    <section class="section fade-in-up" style="animation-delay: 0.5s;">
+      <h2>Soft Skills</h2>
+      <p class="max-w-prose mx-auto mb-6">
+        Alongside technical expertise, I have cultivated strong soft skills that enable me to work effectively in teams, communicate clearly, and adapt to dynamic environments.
+      </p>
+      <ul class="max-w-prose mx-auto space-y-6">
+        <li>
+          <h3>Communication</h3>
+          <p>Excellent verbal and written communication skills developed through presentations, report writing, and collaborative projects.</p>
+        </li>
+        <li>
+          <h3>Problem Solving</h3>
+          <p>Strong analytical skills to identify vulnerabilities, troubleshoot issues, and develop effective solutions under pressure.</p>
+        </li>
+        <li>
+          <h3>Teamwork & Collaboration</h3>
+          <p>Experience working in diverse teams, contributing ideas, and supporting peers to achieve common cybersecurity goals.</p>
+        </li>
+        <li>
+          <h3>Adaptability</h3>
+          <p>Quick learner who embraces new technologies and methodologies to stay ahead in the fast-evolving cybersecurity landscape.</p>
+        </li>
+        <li>
+          <h3>Time Management</h3>
+          <p>Efficient in managing multiple tasks and projects simultaneously while meeting deadlines and maintaining quality.</p>
+        </li>
+        <li>
+          <h3>Ethical Responsibility</h3>
+          <p>Committed to ethical standards and best practices in cybersecurity to protect data privacy and integrity.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section class="section fade-in-up" style="animation-delay: 0.6s;">
+      <h2>Contact Me</h2>
+      <p class="max-w-prose mx-auto mb-6">
+        Feel free to reach out for collaborations, job opportunities, or any cybersecurity-related discussions.
+      </p>
+      <form class="max-w-prose mx-auto space-y-6" action="mailto:sahilj91382@gmail.com" method="post" enctype="text/plain" aria-label="Contact form">
+        <input type="text" name="name" placeholder="Your Name" required aria-required="true" />
+        <input type="email" name="email" placeholder="Your Email" required aria-required="true" />
+        <textarea name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
+        <button type="submit" aria-label="Send message">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Scroll to top button -->
+  <button id="scrollTopBtn" aria-label="Scroll to top" title="Scroll to top">&#8679;</button>
+
+  <script>
+    // Animate skill bars on load
+    window.addEventListener('load', () => {
+      const skillFills = document.querySelectorAll('.skill-fill');
+      skillFills.forEach(fill => {
+        const width = fill.style.width;
+        fill.style.width = '
